@@ -72,18 +72,16 @@ Jawaban soal SQL
 
 	c. Menampilkan data items join dengan kategori
 
-		SELECT 
-    			items.id, 
-    			items.name, 
-    			items.price, 
-    			items.stock 
-		FROM 
-    		items
-		JOIN 
-    		category_id ON items.category_id = kategori.id;
+		SELECT items.name, items.description, items.price, items.stock, items.category_id, categories.name 
+		FROM items 
+		INNER JOIN categories on items.category_id=categories.id;
 
 
 5. Mengubah Data dari Database
+	
+	UPDATE items
+	SET name="Sumsang b50", description="hape keren dari merek sumsang", price=2500000, stock=100
+	WHERE id=1
 
 
 
