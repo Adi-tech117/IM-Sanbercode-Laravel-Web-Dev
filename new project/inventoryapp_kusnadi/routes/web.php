@@ -9,3 +9,5 @@ Route::get('/register', [FormController::class, "register"]);
 Route::get('/Biodata', [FormController::class, "Biodata"]);
 Route::post('/welcome', [FormController::class, "welcome"]);
 
+
+
