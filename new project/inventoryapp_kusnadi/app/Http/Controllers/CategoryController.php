@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Models\Category;
 
 
 class CategoryController extends Controller
@@ -22,7 +23,7 @@ class CategoryController extends Controller
     public function store(Request $request){
         //membuat validation
         $request->validate([
-            'name' => "required|min:6",
+            'name' => "required|min:5",
             'description' => "required",
         ], [
         "required"=>"inputan :attribute wajib diisi",
@@ -42,7 +43,7 @@ class CategoryController extends Controller
 
     }
     public function show($id){
-        $category = DB ::table('categories') -> find($id);
+        $category = Category::find($id);
         return view('category.detail', ['category'=>$category]);
 
     }
@@ -55,7 +56,7 @@ class CategoryController extends Controller
     public function update(Request $request, $id){
         //membuat validation
         $request->validate([
-            'name' => "required|min:6",
+            'name' => "required|min:5",
             'description' => "required",
         ], [
         "required"=>"inputan :attribute wajib diisi",
